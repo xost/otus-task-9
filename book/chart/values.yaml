@@ -1,0 +1,19 @@
+replicaCount: 1
+
+fullnameOverride: "book"
+
+image: "book:0.2.14"
+
+service:
+  type: NodePort
+  port: 9000
+
+postgresql:
+  enabled: true
+  postgresqlUsername: bookuser
+  postgresqlPassword: bookpasswd
+  postgresqlDatabase: bookdb
+  persistence:
+    size: 0.1Gi
+  service:
+    port: "5432"
